@@ -1,0 +1,86 @@
+<div class="bg">
+  <mat-drawer-container class="bg" autosize [hasBackdrop]="true">
+    <app-navbar></app-navbar>
+
+    <div style="padding: 20px">
+      <mat-grid-list cols="4" rowHeight="200px">
+        <mat-grid-tile [colspan]="1" [rowspan]="3" class="grid-list">
+          <mat-card class="chat-card">
+            <mat-card-title>User in room</mat-card-title>
+            <mat-card-content>
+              <div *ngIf="users.length > 0" class="alert alert-warning">
+                <!-- <mat-list>
+                  <mat-list-item *ngFor="let item of users">{{
+                    item
+                  }}</mat-list-item>
+                </mat-list> -->
+
+                <mat-card *ngFor="let item of users" class="card-content">
+                  <mat-card-content >
+                    {{ item }}
+                  </mat-card-content>
+                </mat-card>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+
+
+
+        <mat-grid-tile [colspan]="3" [rowspan]="2" class="grid-list">
+          <mat-card class="chat-card">
+            <mat-card-title>Chat</mat-card-title>
+            <mat-card-content>
+              <div *ngIf="messages.length > 0" class="alert alert-warning">
+                <mat-card *ngFor="let item of messages" class="card-content">
+                  <mat-card-content >
+                    {{ item }}
+                  </mat-card-content>
+                </mat-card>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+
+
+
+        <mat-grid-tile [colspan]="3" [rowspan]="1" class="grid-list">
+          <mat-card class="chat-card">
+            <mat-card-content>
+              <div class="input-container">
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Text</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter text..."
+                    name="text"
+                    ngModel
+                    #inputText
+                    [(ngModel)]="textMess"
+                    name="textMess"
+                    (keyup.enter)="sendMessage(inputText.value)"
+                  />
+                  <button
+                    class="button-input"
+                    mat-icon-button
+                    (click)="sendMessage(inputText.value)"
+                  >
+                    <mat-icon>send</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+
+    <mat-drawer #sidenav class="example-sidenav" mode="side">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/account">Account</a>
+        <a mat-list-item routerLink="/employee">Employee</a>
+        <a mat-list-item routerLink="/chat">Chat room</a>
+      </mat-nav-list>
+    </mat-drawer>
+  </mat-drawer-container>
+</div>

@@ -1,0 +1,28 @@
+<div class="main">
+  <div class="login">
+    <mat-card>
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-content>
+        <form class="form" #loginform = "ngForm" (submit)="Login(loginform)" >
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Enter username..." required name = "username" ngModel/>
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Enter your password..." required name = "password" [type]="hide ? 'password' : 'text'" ngModel (keyup.enter) = "Login(loginform)">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <div>
+            <button mat-stroked-button color="primary">Sign in</button>
+            <button mat-stroked-button color="accent" style="margin: 10px;" (click)="GotoRegister()">Registry</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+</div>

@@ -1,0 +1,36 @@
+<div class="registry">
+  <mat-card>
+    <mat-card-title>Registry</mat-card-title>
+    <mat-card-content>
+      <form class="form" [formGroup]="reactiveForm" (submit)="Registry()" >
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Enter username..." formControlName="username"/>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Enter your mail..." formControlName="email"/>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Enter your password..." [type]="hide ? 'password' : 'text'" formControlName="password" >
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Confirm password</mat-label>
+          <input matInput placeholder="Enter your password again..." [type]="hideRep ? 'password' : 'text'" formControlName="passwordRep" >
+          <button mat-icon-button matSuffix (click)="hideRep = !hideRep" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideRep">
+            <mat-icon>{{hideRep ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <div>
+          <button mat-stroked-button color="primary">Registry</button>
+          <button mat-stroked-button color="accent" style="margin: 10px;" (click)="GobackToLogin()">Close</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+</div>

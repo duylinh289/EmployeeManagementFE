@@ -1,0 +1,66 @@
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.bg{
+  height: 100%;
+  width: 100%;
+  /* background: rgb(124, 124, 85); */
+  /* background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); */
+}
+
+::ng-deep .snack-style{
+  background-color:rgb(155, 245, 175);
+  color: rgb(0, 0, 0);
+}
+::ng-deep .snack-style-error{
+  background-color:rgb(252, 178, 172);
+  color: rgb(0, 0, 0);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 5px;
+}
+
+.chat-card{
+  height: inherit;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+.mat-form-field {
+  flex: 1;
+}
+
+.button_input {
+  margin-left: 8px; /* Khoảng cách giữa input và nút icon */
+}
+
+
+.card-content{
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.grid-list
+{
+  margin: 10px;
+  border-radius: 8px;
+  border: 2px solid rgb(160, 160, 160);
+}

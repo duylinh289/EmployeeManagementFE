@@ -1,0 +1,39 @@
+<div class="body">
+  <mat-card>
+    <mat-card-title style="margin-bottom: 20px;">Assign</mat-card-title>
+    <mat-card-content>
+      <form class="form" [formGroup]="formTasks">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Id</mat-label>
+          <input matInput formControlName="Id"/>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Task Name</mat-label>
+          <input matInput formControlName="TaskName"/>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Task Description</mat-label>
+          <input matInput formControlName="TaskDescription"/>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Assignee</mat-label>
+          <mat-select formControlName="Assignee">
+            <mat-option *ngFor="let emp of employees" [value]="emp.EmployeeCode">{{emp.EmployeeName}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Reporter</mat-label>
+          <input matInput formControlName="Reporter"/>
+        </mat-form-field>
+
+
+        <div>
+          <button mat-stroked-button color="primary" [disabled]="formTasks.invalid" (click)="SaveAsign()">Save</button>
+          <a mat-stroked-button color="accent" mat-dialog-close style="margin: 10px;">Cancel</a>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+</div>

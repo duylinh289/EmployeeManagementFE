@@ -1,0 +1,50 @@
+<mat-toolbar>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+    (click)="clickMenu()"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Employee Management</span>
+  <span class="example-spacer"></span>
+  <div>
+    <h5>Hi, {{ userName }}!</h5>
+  </div>
+  <button
+    style="margin: 5px"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+    (click)="goToChat()"
+  >
+    <mat-icon>chat</mat-icon>
+  </button>
+  <div class="section">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+      (click)="showNotiDialog()"
+    >
+      <mat-icon>notifications</mat-icon>
+      <span
+        matBadge="{{ notificationCount | async }}"
+        matBadgeColor="warn"
+        matBadgeOverlap="true"
+        matBadgePosition="below after"
+        matBadgeSize="small"
+        *ngIf="(notificationCount | async) !== 0"
+      ></span>
+    </button>
+  </div>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+    (click)="logOut()"
+  >
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>

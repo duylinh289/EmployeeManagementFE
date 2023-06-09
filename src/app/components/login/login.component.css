@@ -1,0 +1,23 @@
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.login{
+  padding-top: 150px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.main
+{
+  height: 100%;
+  width: 100%;
+  background-color: beige;
+}

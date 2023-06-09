@@ -1,0 +1,40 @@
+<div class="body">
+  <mat-card>
+    <mat-card-title style="margin-bottom: 20px;">{{title}}</mat-card-title>
+    <mat-card-content>
+      <form class="form" [formGroup]="formEmployee">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Employee's name</mat-label>
+          <input matInput placeholder="Enter employee's name..." formControlName="employeeName"/>
+          <mat-error *ngIf="this.formEmployee.invalid">Employee's name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Enter your mail..." formControlName="email"/>
+          <mat-error *ngIf="this.formEmployee.invalid">Not a valid email</mat-error>
+        </mat-form-field>
+        <mat-form-field color="accent" class="full-width" appearance="outline">
+          <mat-label>Date of birth</mat-label>
+          <input matInput [matDatepicker]="picker2" formControlName="dateOfBirth">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2 color="primary"></mat-datepicker>
+          <mat-error *ngIf="this.formEmployee.invalid">Date of birth is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Gender</mat-label>
+          <mat-select formControlName="gender">
+            <mat-option value='true'>Male</mat-option>
+            <mat-option value='false'>Female</mat-option>
+          </mat-select>
+          <mat-error *ngIf="this.formEmployee.invalid">Gender is required</mat-error>
+        </mat-form-field>
+        <div>
+          <button mat-stroked-button color="primary" [disabled]="formEmployee.invalid" (click)="SaveEmployee(this.actionButton)">{{actionButton}}</button>
+          <a mat-stroked-button color="accent" mat-dialog-close style="margin: 10px;">Cancel</a>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+</div>

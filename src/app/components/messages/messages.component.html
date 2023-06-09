@@ -1,0 +1,22 @@
+<div style="overflow-y: auto; height: 450px">
+  <!-- <p class="card-text" *ngFor="let message of messages">
+      <span class="text-primary">{{message.from}}: </span>
+      <span class="ml-1">{{message.content}}</span>
+  </p> -->
+  <mat-card *ngFor="let message of messages" class="card-content">
+    <mat-card-content *ngIf="message.to != 'leaveroom' && message.from != chatService.userName">
+      <span class = "indam" class="text-primary">{{ message.time }} - </span>
+      <span class = "indam" class="text-primary">{{ message.from }}: </span>
+      <span class = "indam" class="ml-1">{{ message.content }}</span>
+    </mat-card-content>
+    <mat-card-content *ngIf="message.to != 'leaveroom' && message.from == chatService.userName" class="fromme">
+      <span class = "indam" class="text-primary"> {{ message.time }} - </span>
+      <span class = "indam" class="text-primary"> Me:  </span>
+      <span class = "indam" class="ml-1"> {{ message.content }}</span>
+
+    </mat-card-content>
+    <mat-card-content *ngIf="message.to === 'leaveroom' && message.from != chatService.userName" class="notify">
+      <span class = "indam" class="ml-1">{{ message.content }}</span>
+    </mat-card-content>
+  </mat-card>
+</div>

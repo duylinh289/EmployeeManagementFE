@@ -1,0 +1,93 @@
+<div class="bg">
+  <mat-drawer-container class="bg" autosize [hasBackdrop]="true">
+    <app-navbar></app-navbar>
+    <div style="width: 80%; margin-top: 50px; margin: auto; padding: 20px">
+      <h1>List Account</h1>
+
+      <mat-form-field style="margin-top: 20px; margin-bottom: 10px">
+        <mat-placeholder>Enter username...</mat-placeholder>
+        <input matInput type="search" #input />
+        <button mat-button matSuffix mat-stroked-button aria-label="search" (click)="search(input.value)">
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataAccount" matSort>
+          <ng-container matColumnDef="Username">
+            <th mat-header-cell *matHeaderCellDef mat-soft-header>Username</th>
+            <td mat-cell *matCellDef="let row">{{ row.UserName }}</td>
+          </ng-container>
+          <ng-container matColumnDef="Email">
+            <th mat-header-cell *matHeaderCellDef mat-soft-header>Email</th>
+            <td mat-cell *matCellDef="let row">{{ row.Email }}</td>
+          </ng-container>
+          <ng-container matColumnDef="Role">
+            <th mat-header-cell *matHeaderCellDef mat-soft-header>Role</th>
+            <td mat-cell *matCellDef="let row">{{ row.Role }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Edit">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              style="width: 30px"
+            ></th>
+            <td mat-cell *matCellDef="let row">
+              <button
+                mat-icon-button
+                color="primary"
+                (click)="editAccount(row)"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="Delete">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              style="width: 30px"
+            ></th>
+            <td mat-cell *matCellDef="let row">
+              <button
+                mat-icon-button
+                color="warn"
+                (click)="deleteAccount(row)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">
+              No data matching the filter "{{ input.value }}"
+            </td>
+          </tr>
+        </table>
+
+        <mat-paginator
+          [pageSizeOptions]="[5, 10, 25, 100]"
+          aria-label="Select page of accounts"
+        >
+        </mat-paginator>
+      </div>
+    </div>
+    <mat-drawer #sidenav class="example-sidenav" mode="side">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/account" [disabled]="role != 'Admin'"
+          >Account</a
+        >
+        <a mat-list-item routerLink="/employee">Employee</a>
+        <a mat-list-item routerLink="/chat-v2">Chat room</a>
+        <a mat-list-item routerLink="/task" [disabled]="role == 'Employee'">Task assignment</a>
+      </mat-nav-list>
+    </mat-drawer>
+  </mat-drawer-container>
+</div>

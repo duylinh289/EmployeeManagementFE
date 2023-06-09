@@ -1,0 +1,46 @@
+<div class="body">
+  <mat-card>
+    <mat-card-title style="margin-bottom: 20px">{{accountData.UserName}}</mat-card-title>
+    <mat-card-content>
+      <form class="form" [formGroup]="formAccount">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="Enter email..."
+            formControlName="email"
+          />
+          <mat-error *ngIf="this.formAccount.invalid"
+            >Not a valid email</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Role</mat-label>
+          <mat-select formControlName="role">
+            <mat-option value="Admin">Admin</mat-option>
+            <mat-option value="ManagerLV1">Manager Level 1</mat-option>
+            <mat-option value="ManagerLV2">Manager Level 2</mat-option>
+            <mat-option value="Employee">Employee</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <button
+            mat-stroked-button
+            color="primary"
+            [disabled]="formAccount.invalid"
+            (click)="SaveAccount()"
+          >
+            Save
+          </button>
+          <a
+            mat-stroked-button
+            color="accent"
+            mat-dialog-close
+            style="margin: 10px"
+            >Cancel</a
+          >
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

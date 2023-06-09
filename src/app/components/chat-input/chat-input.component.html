@@ -1,0 +1,22 @@
+<mat-form-field class="full-width" appearance="outline">
+  <mat-label>Message</mat-label>
+  <div class="row">
+    <div class="col-11">
+      <input
+        matInput
+        placeholder="Enter message..."
+        name="text"
+        ngModel
+        #inputText
+        [(ngModel)]="content"
+        name="content"
+        (keyup.enter)="sendMessage()"
+      />
+    </div>
+    <div class="col-1">
+      <button class="button-input" mat-icon-button (click)="sendMessage()">
+        <mat-icon>send</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-form-field>

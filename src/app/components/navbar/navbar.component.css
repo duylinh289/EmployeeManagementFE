@@ -1,0 +1,30 @@
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+::ng-deep .snack-style{
+  background-color:rgb(155, 245, 175);
+  color: rgb(0, 0, 0);
+}
+::ng-deep .snack-style-error{
+  background-color:rgb(252, 178, 172);
+  color: rgb(0, 0, 0);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 5px;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

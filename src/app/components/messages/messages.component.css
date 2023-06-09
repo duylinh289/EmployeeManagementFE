@@ -1,0 +1,26 @@
+.card-content{
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.fromme{
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+}
+
+.notify{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: small;
+
+}
+
+.mat-card {
+  padding: 5px;
+}
+
+.indam{
+  font-weight: bold;
+}
