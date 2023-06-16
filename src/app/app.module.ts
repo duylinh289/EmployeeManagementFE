@@ -61,6 +61,19 @@ import { TaskAssignmentComponent } from './components/task-assignment/task-assig
 import { TaskDialogComponent } from './components/dialogs/task-dialog/task-dialog.component';
 import { ImportEmployeeComponent } from './components/import-employee/import-employee.component';
 import { RouterModule } from '@angular/router';
+import { MatMenuModule } from '@angular/material/menu';
+import { StudentComponent } from './components/student-folder/student/student.component';
+import { SubjectComponent } from './components/student-folder/subject/subject.component';
+import { StudentAddEditDialogComponent } from './components/dialogs/student-folder/student-add-edit-dialog/student-add-edit-dialog.component';
+import { DeleteStudentDialogComponent } from './components/dialogs/student-folder/delete-student-dialog/delete-student-dialog.component';
+import { AddEditSubjectDialogComponent } from './components/dialogs/student-folder/add-edit-subject-dialog/add-edit-subject-dialog.component';
+import { DeleteSubjectDialogComponent } from './components/dialogs/student-folder/delete-subject-dialog/delete-subject-dialog.component';
+import { ClassjoinComponent } from './components/student-folder/classjoin/classjoin.component';
+import { ClassjoinEditDialogComponent } from './components/dialogs/student-folder/classjoin-edit-dialog/classjoin-edit-dialog.component';
+import { SccorecardDialogComponent } from './components/dialogs/student-folder/sccorecard-dialog/sccorecard-dialog.component';
+import { EditScoreDialogComponent } from './components/dialogs/student-folder/sccorecard-dialog/edit-score-dialog/edit-score-dialog.component';
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @NgModule({
   declarations: [
@@ -84,6 +97,16 @@ import { RouterModule } from '@angular/router';
     TaskAssignmentComponent,
     TaskDialogComponent,
     ImportEmployeeComponent,
+    StudentComponent,
+    SubjectComponent,
+    StudentAddEditDialogComponent,
+    DeleteStudentDialogComponent,
+    AddEditSubjectDialogComponent,
+    DeleteSubjectDialogComponent,
+    ClassjoinComponent,
+    ClassjoinEditDialogComponent,
+    SccorecardDialogComponent,
+    EditScoreDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -113,7 +136,8 @@ import { RouterModule } from '@angular/router';
     MatListModule,
     MatBadgeModule,
     MatTooltipModule,
-    RouterModule
+    RouterModule,
+    MatMenuModule,
   ],
   providers: [
     AppComponent,

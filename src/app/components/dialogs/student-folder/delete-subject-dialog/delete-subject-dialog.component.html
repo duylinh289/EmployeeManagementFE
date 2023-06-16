@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Delete Subject</h1>
+<div mat-dialog-content>
+  Do you want to delete subject "{{subjectDelete.SubjectName}}"
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button color="warn" (click)="confirmDelete()">Yes, delete for me!</button>
+</div>

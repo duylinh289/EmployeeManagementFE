@@ -7,7 +7,24 @@
   >
     <mat-icon>menu</mat-icon>
   </button>
-  <span>Employee Management</span>
+
+  <button mat-button [matMenuTriggerFor]="aboveMenu" *ngIf="role == 'Admin' || role == 'ManagerLV1' || role == 'ManagerLV2'">Employee</button>
+  <mat-menu #aboveMenu="matMenu" yPosition="above">
+    <button mat-menu-item routerLink="/employee">Employee managegent</button>
+    <button mat-menu-item routerLink="/task">Task assignment</button>
+    <button mat-menu-item routerLink="/chat">Chat room</button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="aboveMenu1">Student</button>
+  <mat-menu #aboveMenu1="matMenu" yPosition="above">
+    <button mat-menu-item routerLink="/student">Student</button>
+    <button mat-menu-item routerLink="/subject">Subject</button>
+    <button mat-menu-item routerLink="/classjoin">Add student to class</button>
+    <button mat-menu-item>Score</button>
+  </mat-menu>
+
+  <button mat-button routerLink="/account">Account</button>
+
   <span class="example-spacer"></span>
   <div>
     <h5>Hi, {{ userName }}!</h5>

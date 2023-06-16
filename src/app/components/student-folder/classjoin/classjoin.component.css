@@ -1,0 +1,52 @@
+table
+{
+  width: 100%;
+}
+
+.mat-form-field
+{
+  font-size: 14px;
+  width: 100%;
+}
+table
+{
+  width: 100%;
+}
+
+.mat-form-field
+{
+  font-size: 14px;
+  width: 100%;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.bg{
+  height: 100%;
+  width: 100%;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+::ng-deep .snack-style{
+  background-color:rgb(155, 245, 175);
+  color: rgb(0, 0, 0);
+}
+::ng-deep .snack-style-error{
+  background-color:rgb(252, 178, 172);
+  color: rgb(0, 0, 0);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 5px;
+}
+

@@ -8,6 +8,9 @@ import { RegistryComponent } from './components/registry/registry.component';
 import { AuthGuard } from './Guard/auth.guard';
 import { ChatV2Component } from './components/chat-v2/chat-v2.component';
 import { TaskAssignmentComponent } from './components/task-assignment/task-assignment.component';
+import { StudentComponent } from './components/student-folder/student/student.component';
+import { SubjectComponent } from './components/student-folder/subject/subject.component';
+import { ClassjoinComponent } from './components/student-folder/classjoin/classjoin.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -18,6 +21,9 @@ const routes: Routes = [
   { path: 'chat', component: ChatComponent, canActivate:[AuthGuard] },
   { path: 'chat-v2', component: ChatV2Component, canActivate:[AuthGuard] },
   { path: 'task', component: TaskAssignmentComponent, canActivate:[AuthGuard] },
+  { path: 'student', component: StudentComponent, canActivate:[AuthGuard] },
+  { path: 'subject', component: SubjectComponent, canActivate:[AuthGuard] },
+  { path: 'classjoin', component: ClassjoinComponent, canActivate:[AuthGuard] },
 ];
 
 @NgModule({

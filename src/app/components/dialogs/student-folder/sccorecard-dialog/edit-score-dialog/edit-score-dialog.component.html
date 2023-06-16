@@ -1,0 +1,68 @@
+<div class="body">
+  <mat-card>
+    <mat-card-title style="margin-bottom: 20px">{{
+      this.scoreData.SubjectName
+    }}</mat-card-title>
+    <mat-card-content>
+      <form class="form" [formGroup]="formScore">
+        <mat-form-field
+          class="full-width"
+          appearance="outline"
+          *ngIf="this.scoreData"
+        >
+          <mat-label>Regular Exam</mat-label>
+          <input
+            matInput
+            formControlName="RegularExam"
+            placeholder="Enter score..."
+          />
+          <mat-error *ngIf="this.formScore.invalid"
+            >Score from 0 - 10</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Midterm Exam</mat-label>
+          <input
+            matInput
+            placeholder="Enter score..."
+            formControlName="MidtermExam"
+          />
+          <mat-error *ngIf="this.formScore.invalid"
+            >Score from 0 - 10</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Final Exam</mat-label>
+          <input
+            matInput
+            placeholder="Enter score..."
+            formControlName="FinalExam"
+          />
+          <mat-error *ngIf="this.formScore.invalid"
+            >Score from 0 - 10</mat-error
+          >
+        </mat-form-field>
+
+        <div>
+          <button
+            mat-stroked-button
+            color="primary"
+            [disabled]="formScore.invalid"
+            (click)="Save()"
+          >
+            Save
+          </button>
+          <a
+            mat-stroked-button
+            color="accent"
+            mat-dialog-close
+            style="margin: 10px"
+            >Cancel</a
+          >
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

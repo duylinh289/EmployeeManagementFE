@@ -8,9 +8,12 @@
           <mat-card class="chat-card">
             <mat-card-title>User in room</mat-card-title>
             <mat-card-content>
-              <div >
-                <mat-card *ngFor="let user of chatService.onlineUsers" class="card-content">
-                  <mat-card-content >
+              <div>
+                <mat-card
+                  *ngFor="let user of chatService.onlineUsers"
+                  class="card-content"
+                >
+                  <mat-card-content>
                     {{ user }}
                   </mat-card-content>
                 </mat-card>
@@ -23,23 +26,35 @@
           <mat-card class="member-card">
             <mat-card-title>Chat</mat-card-title>
             <mat-card-content>
-                <mat-card class="card-content">
-                  <mat-card-content >
-                    <app-messages [messages]="chatService.messages"></app-messages>
-                  </mat-card-content>
-                </mat-card>
+              <mat-card class="card-content">
+                <mat-card-content>
+                  <app-messages
+                    [messages]="chatService.messages"
+                  ></app-messages>
+                </mat-card-content>
+              </mat-card>
             </mat-card-content>
           </mat-card>
         </mat-grid-tile>
 
-        <mat-grid-tile [colspan]="3" [rowspan]="1" class="grid-list" rowHeight="100%">
+        <mat-grid-tile
+          [colspan]="3"
+          [rowspan]="1"
+          class="grid-list"
+          rowHeight="100%"
+        >
           <mat-card class="chat-card">
             <mat-card-content>
               <div class="input-container">
-                  <app-chat-input class="full-width" (contentEmitter)="sendMessage($event)"></app-chat-input>
+                <app-chat-input
+                  class="full-width"
+                  (contentEmitter)="sendMessage($event)"
+                ></app-chat-input>
               </div>
 
-              <button mat-raised-button (click)="openPrivateChat('locphuho')">Send notify</button>
+              <button mat-raised-button (click)="openPrivateChat('locphuho')">
+                Send notify
+              </button>
             </mat-card-content>
           </mat-card>
         </mat-grid-tile>
@@ -49,11 +64,13 @@
     <mat-drawer #sidenav class="example-sidenav" mode="side">
       <mat-nav-list>
         <a mat-list-item routerLink="/account" [disabled]="role != 'Admin'"
-          >Account</a
-        >
+          ><mat-icon matListItemIcon style="margin-right: 5px; margin-bottom: 3px;">note</mat-icon> Account
+        </a>
         <a mat-list-item routerLink="/employee">Employee</a>
         <a mat-list-item routerLink="/chat-v2">Chat room</a>
-        <a mat-list-item routerLink="/task" [disabled]="role == 'Employee'">Task assignment</a>
+        <a mat-list-item routerLink="/task" [disabled]="role == 'Employee'"
+          >Task assignment</a
+        >
       </mat-nav-list>
     </mat-drawer>
   </mat-drawer-container>

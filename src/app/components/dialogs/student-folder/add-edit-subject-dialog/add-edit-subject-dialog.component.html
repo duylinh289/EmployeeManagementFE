@@ -1,0 +1,55 @@
+<div class="body">
+  <mat-card>
+    <mat-card-title style="margin-bottom: 20px"></mat-card-title>
+    <mat-card-content>
+      <form class="form" [formGroup]="formSubject">
+        <mat-form-field class="full-width" appearance="outline" *ngIf="this.dataSubject">
+          <mat-label>Subject Id</mat-label>
+          <input
+            matInput
+            formControlName="subjectId"
+          />
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Subject Name</mat-label>
+          <input
+            matInput
+            placeholder="Enter name..."
+            formControlName="subjectName"
+          />
+          <mat-error *ngIf="this.formSubject.invalid"
+            >Not a valid name</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Description</mat-label>
+          <input
+            matInput
+            placeholder="Enter name..."
+            formControlName="description"
+          />
+        </mat-form-field>
+
+        <div>
+          <button
+            mat-stroked-button
+            color="primary"
+            [disabled]="formSubject.invalid"
+            (click)="Save()"
+          >
+            Save
+          </button>
+          <a
+            mat-stroked-button
+            color="accent"
+            mat-dialog-close
+            style="margin: 10px"
+            >Cancel</a
+          >
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

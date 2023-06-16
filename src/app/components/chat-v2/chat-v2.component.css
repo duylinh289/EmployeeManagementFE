@@ -1,4 +1,6 @@
-
+.mat-mdc-list-item-icon {
+  color: rgba(0, 0, 0, 0.54);
+}
 .example-spacer {
   flex: 1 1 auto;
 }

@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://localhost:44325/api",
-  signalRUrl: "https://localhost:44325"
+  apiUrl: "http://localhost:8080/api",
+  signalRUrl: "http://localhost:8080"
 };
 
 /*
